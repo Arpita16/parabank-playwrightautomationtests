@@ -35,7 +35,7 @@ constructor(public page: Page){
                  accountNumber: accountNumber
             };
          
-           writeFileSync('D:\\TecnicalTest-SOP\\utils\\savingsAccount.json', JSON.stringify( accountData));
+           writeFileSync('D:\\Parabank-PlaywrightTests\\utils\\savingsAccount.json', JSON.stringify( accountData));
            
          expect(accountNumber).toBeDefined();
          

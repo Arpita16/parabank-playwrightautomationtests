@@ -3,11 +3,9 @@ import { Page, expect } from "@playwright/test";
 
 export class TransferFundsPage {
   
-
     constructor(public page: Page){
         this.page = page;
-        
-    }
+        }
 
     async navigateToTransferFunds() {
         await this.page.getByRole('link',{name:'Transfer Funds'}).click();

@@ -1,8 +1,5 @@
 import { Locator, Page, expect } from "@playwright/test";
 
-
-
-
 export class AccountsOverviewPage {
 
     private table:Locator;
@@ -38,7 +35,7 @@ export class AccountsOverviewPage {
     
     async transactionCount(){
         const rowCount = await this.page.locator('//*[@id="transactionTable"]/tbody/tr').count();
-    console.log(`Total transaction rows are : ${rowCount}`);
+        console.log(`Total transaction rows are : ${rowCount}`);
         }
         
   

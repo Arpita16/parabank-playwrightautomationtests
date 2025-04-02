@@ -26,22 +26,18 @@ export class LoginPage {
     async validateLoginSuccess(){
               
              const successMessage= await this.page.getByRole('heading',{name:'Accounts Overview'});
-
-              await expect(successMessage).toContainText('Accounts Overview');
-      
-
-    }
+             await expect(successMessage).toContainText('Accounts Overview');
+       }
     
   async captureCheckingAccountNumber() {
     
     await this.page.waitForSelector('//table/tbody/tr[1]/td[1]/a');  
-
-  const accountNumber = await this.page.locator('//table/tbody/tr[1]/td[1]/a').textContent();
-   const accountData = {
+    const accountNumber = await this.page.locator('//table/tbody/tr[1]/td[1]/a').textContent();
+    const accountData = {
     accountNumber: accountNumber
   };
 
-  writeFileSync('D:\\TecnicalTest-SOP\\utils\\checkingAccount.json', JSON.stringify(accountData));
+  writeFileSync('D:\\Parabank-PlaywrightTests\\utils\\checkingAccount.json', JSON.stringify(accountData));
 
 
   expect(accountNumber).toBeDefined();

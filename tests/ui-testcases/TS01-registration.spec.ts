@@ -1,7 +1,5 @@
 import { test } from "@playwright/test";
 import { RegistrationPage } from "../../pages/registrationpage";
-
-
 import userData from "../../utils/userData.json"
 
 let page: any;
@@ -24,18 +22,12 @@ test.describe("Registration Page", () => {
      });
 
 test('should register a new user', async () => {
-         await registrationPage.goto();
-         
-         
-         await registrationPage.fillRegisterForm(userData);
         
-         await registrationPage.submitForm();
-
-       
-     
-         await registrationPage.validateRegistrationSuccess();
-       
-
+  
+        await registrationPage.goto();
+        await registrationPage.fillRegisterForm(userData);
+        await registrationPage.submitForm();
+        await registrationPage.validateRegistrationSuccess();
         await registrationPage.logout();
          
        });
