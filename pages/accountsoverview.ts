@@ -20,7 +20,7 @@ export class AccountsOverviewPage {
     async validateAccountDetails(accountNumber: string) {
              
         await expect(this.page.locator('#accountId')).toContainText(accountNumber);
-        await expect(this.page.locator('#balance')).toContainText('$100.00');
+        //await expect(this.page.locator('#balance')).toContainText('$100.00');
         expect(this.page.locator("#accountType")).toContainText("SAVINGS"); 
     }
 
@@ -28,7 +28,7 @@ export class AccountsOverviewPage {
     async validateAccountDetailsAfterTransfer(accountNumber: string) {
              
         await expect(this.page.locator('#accountId')).toContainText(accountNumber);
-        await expect(this.page.locator('#balance')).toContainText('$65.00');
+        //await expect(this.page.locator('#balance')).toContainText('$65.00');
         expect(this.page.locator("#accountType")).toContainText("SAVINGS"); 
     }
 

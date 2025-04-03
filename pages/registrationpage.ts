@@ -31,15 +31,19 @@ export  class RegistrationPage {
     if (await this.page.locator('.error').isVisible()) {
       console.warn('User already exists, skipping registration.');
       return;
-  }
-
+    }
+    
+else{
        await expect(this.page.locator('h1')).toContainText('Welcome');
        await expect(this.page.locator('#rightPanel')).toContainText('Your account was created successfully. You are now logged in.');
   
-}
-      async logout(){
+
+  
+  
            await this.page.getByRole('link', { name: 'Log Out' }).click();
-      }
+      
+    }
+  }
   
   async fillRegisterForm(userData:any) {
     await this.page.fill(this.firstNameInput, userData.FirstName);

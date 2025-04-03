@@ -1,6 +1,6 @@
 import { test} from '@playwright/test';
 import { LoginPage } from '../../pages/loginpage';
-import { RegistrationPage } from '../../pages/registrationpage';
+
 import userData from "../../utils/userData.json"
 
 import { UpdateContactInfoPage } from '../../pages/updatecontactinfo';
@@ -10,7 +10,7 @@ test.describe('User login and Profile Update', () => {
     let context:any;
     let loginPage:LoginPage;
     let updateContactInfoPage: UpdateContactInfoPage;
-    let registration:RegistrationPage
+   
 
     test.beforeAll(async ({ browser }) => {
         context = await browser.newContext();
@@ -18,7 +18,7 @@ test.describe('User login and Profile Update', () => {
         
         loginPage = new LoginPage(page);
         updateContactInfoPage = new UpdateContactInfoPage(page);
-        registration=new RegistrationPage(page);
+      
     });
 
     test('User can login and update contact info', async () => {
@@ -33,7 +33,7 @@ test.describe('User login and Profile Update', () => {
         await updateContactInfoPage.updateContactInfo('77777-7777');
         await updateContactInfoPage.clickUpdateProfile();
         await updateContactInfoPage.validateUpdateSuccess();
-        await registration.logout();
+        await updateContactInfoPage.logout();
       
     });
 

@@ -33,7 +33,7 @@ test('should register a new user', async () => {
         await registrationPage.fillRegisterForm(userData);
         await registrationPage.submitForm();
         await registrationPage.validateRegistrationSuccess();
-        await registrationPage.logout();
+        //await registrationPage.logout();
          
        });
 
