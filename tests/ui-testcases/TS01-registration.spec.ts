@@ -8,6 +8,8 @@ let registrationPage: RegistrationPage;
 
 
 test.describe("Registration Page", () => {
+  test.use({ storageState: undefined }); // Ensures a fresh session every time
+
 
   test.beforeAll(async ({ browser }) => {
     context = await browser.newContext();
@@ -19,6 +21,9 @@ test.describe("Registration Page", () => {
   
      test.beforeEach(async () => {
      await page.goto("https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC");
+     await page.context().clearCookies();
+     await page.context().clearPermissions();
+     await page.evaluate(()=> localStorage.clear());
      });
 
 test('should register a new user', async () => {

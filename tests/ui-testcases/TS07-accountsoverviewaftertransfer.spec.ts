@@ -42,6 +42,9 @@ test.describe("Parabank Savings Account Transactions Validation", () => {
     });
     
     test.afterAll(async () => {
+        if(await page.isVisible('text=Log Out')){
+            await page.getByRole('link',{name:'Log Out'}).click();
+        }
         await page.close();
         await context.close();
     });

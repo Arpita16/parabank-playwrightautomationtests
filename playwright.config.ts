@@ -27,10 +27,12 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+   
     viewport:{width:1920,height:1080},
     launchOptions:{
       slowMo:1000,
-    headless:true
+    headless:true,
+   
       
     },
     /* Base URL to use in actions like `await page.goto('/')`. */
