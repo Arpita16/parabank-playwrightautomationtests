@@ -23,6 +23,9 @@ export class UpdateContactInfoPage {
     async validateUpdateSuccess() {
         const successMessage= this.page.locator('#updateProfileResult')
         await expect(successMessage).toContainText('Profile Updated');
+    }
+    async logout(){
+        await this.page.getByRole('link', { name: 'Log Out' }).click();
+    }
          
     }
-}
