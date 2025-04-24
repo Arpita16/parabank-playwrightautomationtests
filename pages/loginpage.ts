@@ -25,7 +25,7 @@ export class LoginPage {
     }
     async validateLoginSuccess(){
               
-             const successMessage= await this.page.getByRole('heading',{name:'Accounts Overview'});
+             const successMessage= this.page.getByRole('heading', { name: 'Accounts Overview' });
              await expect(successMessage).toContainText('Accounts Overview');
        }
     
